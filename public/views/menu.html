@@ -1,0 +1,24 @@
+<div class='container-fluid' ng-controller="MenuController" id="slides_control">
+  <div class="row">
+    <div class="col-md-6">
+        <h1>Menu</h1>
+        <ul>
+          <li>Stewed Duck Noodles</li>
+          <li>Kao Soi</li>
+          <li>Sen Lek</li>
+        </ul>
+    </div><!-- /.col -->
+    <div class="col-md-6">      
+      <div>
+          <carousel interval="myInterval">
+            <slide ng-repeat="slide in slides" active="slide.active">
+              <img ng-src="{{slide.image}}">
+              <div class="carousel-caption">
+                <h4>{{desc[$index]}}</h4>
+              </div>
+            </slide>
+          </carousel>
+       </div>
+    </div><!-- /.col-->
+  </div><!-- row -->
+</div><!-- /.container-fluid -->

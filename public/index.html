@@ -1,45 +1,79 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<base href="/">
 
-	<title>Starter Node and Angular</title>
-
+	<title>Nam Sai Noodles</title>  
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 	<!-- CSS -->
-	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+	<link  rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link  rel="stylesheet" href="css/style.css"> <!-- custom styles -->
 
 	<!-- JS -->
-	<script src="libs/angular/angular.min.js"></script>
-	<script src="libs/angular-route/angular-route.min.js"></script>
-
+	<script  src="libs/angular/angular.min.js"></script>
+	<script  src="libs/angular-route/angular-route.min.js"></script>
+	<script  src="libs/angular-bootstrap/ui-bootstrap.min.js"></script>   
+  <script  src="libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>  
+  <script  src="libs/jquery/dist/jquery.min.js"></script>
+  <script  src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
 	<!-- ANGULAR CUSTOM -->
 	<script src="js/controllers/MainCtrl.js"></script>
 	<script src="js/controllers/NerdCtrl.js"></script>
 	<script src="js/services/NerdService.js"></script>
-	<script src="js/controllers/GeekCtrl.js"></script>
+	<script src="js/controllers/MenuCtrl.js"></script>
 	<script src="js/services/GeekService.js"></script>
 	<script src="js/appRoutes.js"></script>
 	<script src="js/app.js"></script>
 </head>
-<body ng-app="sampleApp" ng-controller="NerdController">
-<div class="container">
-	
-	<!-- HEADER -->
-	<nav class="navbar navbar-inverse">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="/">Stencil: Node and Angular</a>
-		</div>
-		<ul class="nav navbar-nav">
-			<li><a href="/nerds">Nerds</a></li>
-			<li><a href="/geeks">Geeks</a></li>
-		</ul>
-	</nav>
-
-	<!-- ANGULAR DYNAMIC CONTENT -->
-	<div ng-view></div>
-
+  
+<body ng-app="sampleApp" >
+  <div class="container-fluid">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://nam-sai-noodles-174060.nitrousapp.com:8080/">
+            Nam-Sai-Noodles
+          </a>            
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="/menu">Menu <span class="sr-only">(current)</span></a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href ='' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User Admin <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/addEditUser">Add/Edit User</a></li>
+                <li class="divider"></li>              
+              </ul>
+            </li>
+          </ul>    
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href ='' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Route Admin <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/addRoute">Add Route</a></li>               
+                <li class="divider"></li>
+                <li><a href="/viewDrops">View Drops (Map)</a></li>
+              </ul>
+            </li>
+          </ul>      
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+  </nav>    
+  <div class='container-fluid' id='container1'> 
+    <!-- ANGULAR DYNAMIC CONTENT -->
+    <div ng-view></div>
+  </div>
 </div>
 </body>
 </html>
